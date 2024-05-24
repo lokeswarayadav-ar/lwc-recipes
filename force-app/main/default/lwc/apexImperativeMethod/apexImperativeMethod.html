@@ -15,6 +15,14 @@
             <template if:true={error}>
                 <c-error-panel errors={error}></c-error-panel>
             </template>
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="contact">
+                    <p key={contact.Id}>{contact.Name}</p>
+                </template>
+            </template>
+            <template if:true={error}>
+                <c-error-panel errors={error}></c-error-panel>
+            </template>
         </div>
 
         <c-view-source source="lwc/apexImperativeMethod" slot="footer">
